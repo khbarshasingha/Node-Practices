@@ -3,6 +3,7 @@ const http = require("http");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const dishRouter = require("./Router/dishRouter");
+const dishIdRouter = require("./Router/dishIdRouter");
 
 const hostname = "localhost";
 const port = 3000;
@@ -11,7 +12,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use("/dishes", dishRouter);
-
+// app.use("/dish", dishIdRouter);
 //.all() works for all the (get post etc )methods on the given endpoint and will execute first
 
 //app.all executes first and then the req and res is passed on to  app.get()
